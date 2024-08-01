@@ -1,0 +1,26 @@
+CREATE TABLE EmP (
+E_id INT,
+E_name VARCHAR(100),
+Age INT,
+Salary DECIMAL(10, 2)
+);
+
+desc EmP;
+
+INSERT INTO EmP  VALUES(101,’Alice’,35, 10000);
+Insert into emp values (102,’Bob’, 30, 15000);
+Insert into emp values (103,’Charlie’,28, 12000);
+Insert into emp values (104,’David’,40,25000),
+Insert into emp values (105,’Eve’, 50,100000);
+
+select * from emp;
+
+SELECT COUNT(E_name) AS NumberOfEmployees FROM EmP;
+
+SELECT MAX(Age) AS OldestAge FROM EmP;
+
+SELECT MIN(Age) AS YoungestAge FROM EmP;
+
+SELECT E_id, E_name, Age, Salary FROM EmP ORDER BY Salary ASC;
+
+SELECT Age, COUNT(*) AS NumberOfEmployees, SUM(Salary) AS TotalSalaries, AVG(Salary) AS AverageSalary, MIN(Salary) AS LowestSalary, MAX(Salary)AS HighestSalary FROM EmP GROUP BY Age;
